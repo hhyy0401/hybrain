@@ -1,0 +1,21 @@
+# eval / train outputs
+_reproduce_out/
+runs/
+graph_cache/
+
+# python
+__pycache__/
+*.py[cod]
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# archives / logs
+*.tar
+*.zip
+events.out.tfevents.*
+
+# but DO ship the released checkpoints (exception must come after *.tar)
+!ckpts/**/best.pth.tar

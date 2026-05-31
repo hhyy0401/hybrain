@@ -1,0 +1,18 @@
+# Install a CUDA-matched torch first (https://pytorch.org), then the rest.
+torch==2.5.1            # tested with the +cu121 build
+mamba-ssm==2.2.4        # selective-scan backbone (needs a CUDA toolchain)
+torch-geometric==2.3.1
+numpy==1.26.4
+scipy==1.15.3
+pandas==2.3.3
+scikit-learn==1.7.2
+h5py==3.16.0
+networkx==3.1
+opt-einsum==3.4.0
+einops==0.8.2
+more-itertools==8.12.0
+pyEDFlib==0.1.34
+linear-attention-transformer==0.19.1
+tensorboardX==2.6.2.2
+dotted_dict==1.1.3
+tqdm==4.67.3
