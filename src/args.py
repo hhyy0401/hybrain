@@ -101,12 +101,12 @@ def get_args():
     #   horizon. See model/ada_mshyper_eeg.py and model/st_hyper_eeg.py
     #   docstrings + BASELINES.md for the exact delta.
     parser.add_argument("--model_name", type=str, default="light_st_hyper", choices=(
-        # Main model + ablation backbones (all share LightSTHyper architecture):
+        # Main model + ablation backbones (all share HyBrain architecture):
         "light_st_hyper",          # BiMamba backbone (main)
         "light_st_hyper_linear",   # linear backbone (no temporal modeling — ablation)
         "light_st_hyper_dwsep",    # depthwise-separable 1D conv backbone (ablation)
         # v2 family (light_dyn_hyper2.py): adds optional temporal attention
-        # and FFT mixer on top of the LightSTHyper backbone.
+        # and FFT mixer on top of the HyBrain backbone.
         "light_st_hyper2",
         "light_st_hyper_pair",     # pairwise spatial self-attn (no hyperedge — ablation)
         "light_dense_hyper2",      # per-second readout v2 (Hybrid-A pw)
@@ -161,7 +161,7 @@ def get_args():
                         help='Number of hypergraph layers.')
     parser.add_argument('--n_pma_seeds', type=int, default=1,
                         help='Number of PMA seed queries (Set Transformer readout).')
-    # === LightSTHyper v2 (light_dyn_hyper2.py) Hybrid-A flags ===
+    # === HyBrain v2 (light_dyn_hyper2.py) Hybrid-A flags ===
     parser.add_argument('--readout_concat', action='store_true', default=False,
                         help='Concat raw Mamba pooled features to PMA readout '
                              'before the final classifier (GRU-GCN concat=True analog).')
@@ -185,7 +185,7 @@ def get_args():
                              'hyperedge stack.')
     parser.add_argument('--hyper_block_type', type=str, default='static',
                         choices=('static', 'adaptive', 'iterative', 'pairwise'),
-                        help='LightSTHyper v2 hypergraph block type. '
+                        help='HyBrain v2 hypergraph block type. '
                              'static = paper-default static hyperedge queries; '
                              'adaptive = input-dependent queries; '
                              'iterative = refine M map for n_iters steps; '

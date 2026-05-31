@@ -1,5 +1,5 @@
 """
-Drop-in temporal-encoder backbones for `LightSTHyper`.
+Drop-in temporal-encoder backbones for `HyBrain`.
 
 Same input/output convention as `BiMambaBackbone`:
     Input  x: (B, N, T, d_input)

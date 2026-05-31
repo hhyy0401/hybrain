@@ -1,4 +1,4 @@
-# Seizure Detection & Prediction — LightSTHyper
+# Seizure Detection & Prediction — HyBrain
 
 EEG seizure modeling on TUSZ and CHB-MIT across three tasks: window-based
 (clip-level) detection, point-wise (per-second) detection, and seizure
@@ -70,7 +70,7 @@ src/
 ├── main.py                  # train / eval entry
 ├── args.py                  # CLI
 ├── utils.py  constants.py
-├── model/                   # LightSTHyper (6 files)
+├── model/                   # HyBrain (6 files)
 │   ├── light_dyn_hyper.py        # window / prediction
 │   ├── light_dyn_hyper2.py       # + temporal attention
 │   ├── light_dense_hyper.py

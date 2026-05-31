@@ -8,7 +8,7 @@ at that moment. This makes the per-second logit a function of "what
 hyperedge pattern is active at t" rather than a global clip pattern
 broadcast back.
 
-Differences vs `LightSTHyper` (the clip-level variant):
+Differences vs `HyBrain` (the clip-level variant):
   1. Hyperedge block = `HyperedgeBlock` (per-t Q, per-t hyperedge embedding),
      NOT `SpatioTemporalHyperedgeBlock` (which collapses time).
   2. No temporal mean before readout — keep (B, T, N, d).
